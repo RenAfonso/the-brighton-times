@@ -100,14 +100,13 @@ ul {
   text-align: center;
   line-height: 24px;
   padding: 24px;
-  min-height: 48px;
-  min-width: 48px;
   text-transform: uppercase;
 }
 
 .nav a {
   text-decoration: none;
   color: #616161;
+  padding: 1.5em;
 }
 
 .nav a:hover {
