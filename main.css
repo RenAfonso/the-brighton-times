@@ -69,11 +69,19 @@ ul {
 .header__title {
   font-weight: 300;
   font-size: 4em;
-  margin: 0.5em 0.25em;
+  padding: 0.5em;
   display: inline-block;
   color: #212121;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.burguer {
+  font-size: 2em;
+  float: right;
+  padding: 0.5em;
+  visibility: hidden;
+}
 
 /*
  *
@@ -99,8 +107,10 @@ ul {
   width: 24%;
   text-align: center;
   line-height: 24px;
-  padding: 24px;
+  padding: 12px;
   text-transform: uppercase;
+  min-width: 48px;
+  min-height: 48px;
 }
 
 .nav a {
@@ -374,4 +384,57 @@ footer a {
   text-decoration: none;
   color: #333;
   padding: 1.5em;
+}
+
+/*
+ *
+ * Media queries
+ *
+ */
+
+@media screen and (max-width: 400px) {
+  
+  .header__logo {
+    height: 3em;
+    margin-right: 1em;
+    vertical-align: top;
+    margin-top: 0.5em;
+  }  
+
+  .header__title {
+    font-weight: 150;
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: center;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .burguer {
+  visibility: visible;
+  }
+
+  .nav {
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+  }
+
+  .nav.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .nav__item {
+    width: 100%;
+  }
+
+
+
+
 }
