@@ -64,6 +64,7 @@ ul {
   margin-right: 1em;
   vertical-align: top;
   margin-top: 12px;
+  display:inline-block;
 }
 
 .header__title {
@@ -78,7 +79,7 @@ ul {
 
 .burguer {
   font-size: 2em;
-  float: right;
+  float: left;
   padding: 0.5em;
   display: none;
 }
@@ -90,7 +91,6 @@ ul {
  */
 
 .nav {
-  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -260,12 +260,7 @@ main {
   font-weight: bold;
 }
 
-.scores__table td:nth-child(3) {
-  text-align: right;
-}
-
-.scores__table td:nth-child(2),
-.scores__table td:nth-child(5) {
+.scores__table td {
   text-align: center;
 }
 
@@ -342,13 +337,13 @@ main {
 }
 
 .snippet__thumbnail {
-  width: 100px;
   float: left;
   margin-right: 1em;
 }
 
 .snippet__title {
   font-weight: 500;
+  font-size: 1.5em;
 }
 
 .snippet__title a {

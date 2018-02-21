@@ -3,14 +3,60 @@
 	flex-wrap: wrap;
 }
 
+.snippet {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-@media screen and (max-width: 400px) {
+.snippet__title {
+  width: 100%;
+  order: 1;
+}
+
+.snippet__thumbnail {
+  max-width: 25%;
+  object-fit: contain;
+  order: 2;
+}
+
+.snippet__text {
+  width: 70%;
+  order: 3;
+  text-align: justify;
+  overflow: hidden;
+  position: relative; 
+  line-height: 1.2em;
+  max-height: 3.6em; 
+  margin-right: -1em;
+  padding-right: 1em;
+}
+
+.snippet__text:before {
+  content: '...';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.snippet__text:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.2em;
+  background: white;
+}
+
+
+@media screen and (max-width: 319px) {
   
+  .date, .place {
+    display: none;
+  }
+
   .header__logo {
-    height: 3em;
-    margin-right: 1em;
-    vertical-align: top;
-    margin-top: 0.5em;
+    display: none;
   }  
 
   .header__title {
@@ -18,7 +64,7 @@
     font-size: 2em;
     display: inline-block;
     vertical-align: center;
-    margin-right: auto;
+    margin-right: 0;
     margin-left: auto;
   }
 
@@ -27,13 +73,11 @@
   }
 
   .nav {
-    width: 300px;
+    width: 250px;
     height: 100%;
     position: absolute;
-    /* This trasform moves the drawer off canvas. */
     -webkit-transform: translate(-300px, 0);
     transform: translate(-300px, 0);
-    /* Optionally, we animate the drawer. */
     transition: transform 0.3s ease;
     z-index: 1;
     background-color: rgb(255, 255, 255);
@@ -48,6 +92,72 @@
   .nav__item {
     width: 100%;
     border-bottom: rgb(0, 0, 0) 1px solid;
+  }
+
+  .snippet__thumbnail {
+    display:none;
+  }
+
+  .snippet__text {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 400px) {
+  
+  .place {
+    display: none;
+  }
+
+  .header__logo {
+    height: 3em;
+    vertical-align: top;
+    margin-left: 0;
+    margin-top: 0.5em;
+    float: right;
+  }  
+
+  .header__title {
+    font-weight: 150;
+    font-size: 2em;
+    display: inline-block;
+    vertical-align: center;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .burguer {
+  display: inline-block;
+  }
+
+  .nav {
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+    transition: transform 0.3s ease;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  }
+
+  .nav.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+
+  .nav__item {
+    width: 100%;
+    border-bottom: rgb(0, 0, 0) 1px solid;
+  }
+
+  .snippet__thumbnail {
+    display:none;
+  }
+
+  .snippet__text {
+    width: 100%;
   }
 }
 
@@ -70,7 +180,7 @@
   
 }
 
-@media screen and (min-width: 551px) and (max-width: 750px) {
+@media screen and (min-width: 551px) and (max-width: 850px) {
   
   .hero {
 	order: 1;
@@ -96,22 +206,22 @@
 
 }
 
-@media screen and (min-width: 751px) {
+@media screen and (min-width: 851px) {
   
   .header__inner {
-  	width: 750px;
+  	width: 850px;
   	margin-right: auto;
   	margin-left: auto;
   }
 
   .nav {
-  	width: 750px;
+  	width: 850px;
   	margin-right: auto;
   	margin-left: auto;
   }
 
   .content {
-  	width: 750px;
+  	width: 850px;
   	margin-right: auto;
   	margin-left: auto;
   }
@@ -128,12 +238,12 @@
 
   .scores {
 	order: 3;
-	width: 40%;
+	width: 45%;
   }
 
   .weather {
 	order: 4;
-	width: 60%;
+	width: 55%;
   }
 
   .recent-news {
